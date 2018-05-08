@@ -7,7 +7,7 @@
         $request = json_decode($postdata);
         $id_todo = $request->id_todo;
         
-        $q = mysqli_query($connect, "DELETE FROM todo_list WHERE id_todo='$id'");
+        $q = mysqli_query($connect, "DELETE FROM todo_list WHERE id_todo='$id_todo'");
 
         $data =array(
             'message' => "Delete To Do List Succses",
