@@ -26,7 +26,7 @@
             $query_register = mysqli_query($connect,"INSERT INTO user (nama_user, email_user, password_user) VALUES ('$nama', '$email', '$encrypt_password') ");
          
             if($query_register){
-                $query = mysqli_query($connect, "SELECT id_user,nama_user,email_user FROM user WHERE email_user='$email' AND password_user='$password_user'");
+                $query = mysqli_query($connect, "SELECT id_user,nama_user,email_user FROM user WHERE email_user='$email' AND password_user='$encrypt_password'");
 
                 if(mysqli_num_rows($query)){        
                     $result = mysqli_fetch_assoc($query);
