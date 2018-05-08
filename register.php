@@ -5,7 +5,6 @@
     $postdata = file_get_contents("php://input");
     $nama = "";
     $email ="";
-    $alamat = "";
     $password = "";
     if (isset($postdata)) {
         $request = json_decode($postdata);
