@@ -2,12 +2,12 @@
     include 'db_connect.php';
 
    $postdata = file_get_contents("php://input");
-   $id ="";
+   $id_user ="";
    $nama = "";
    $email = "";
    if (isset($postdata)) {
        $request = json_decode($postdata);
-       $id = $request->id;
+       $id_user = $request->id_user;
        $nama = $request->nama;
        $email = $request->email;
     
