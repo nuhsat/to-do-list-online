@@ -4,7 +4,7 @@
 
     $id_user = $_GET['id_user'];
 
-    $query = mysqli_query($connect, "SELECT * FROM todo_list WHERE id_user='$id_user'");
+    $query = mysqli_query($connect, "SELECT * FROM todo_list WHERE id_user='$id_user' ORDER BY duedate ASC");
 
     if(mysqli_num_rows($query)){        
         $result_set = array();
