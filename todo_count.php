@@ -15,8 +15,8 @@
         
         $data =array(
             'message' => "Total dan total yang udah",
-            'data1' => $result1,
-            'data2' => $result2,
+            'data_total' => $result1,
+            'data_done' => $result2,
             'status' => "200"
         );
    
