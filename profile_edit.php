@@ -25,10 +25,22 @@
                 $q = mysqli_query($connect, "UPDATE user SET nama_user='$nama', email_user='$email', password_user='$encrypt_password_new' WHERE id_user='$id_user'");
 
                 if($q){
-                    $data =array(
-                        'message' => "Update Data Profile Succses",
-                        'status' => "200"
-                    );    
+                        $query = mysqli_query($connect, "SELECT id_user,nama_user,email_user FROM user WHERE email_user='$email' AND password_user='$encrypt_password_new'");
+                        if(mysqli_num_rows($query)){        
+                            $result = mysqli_fetch_assoc($query);
+
+                            $data =array(
+                                'message' => "Profile ada",
+                                'data' => $result,
+                                'status' => "200"
+                            );
+                        }
+                        else{
+                            $data =array(
+                                'message' => "Profile gagal",
+                                'status' => "404"
+                            );
+                        } 
                 }
                 else{
                     $data =array(
